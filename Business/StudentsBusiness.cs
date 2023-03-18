@@ -3,77 +3,76 @@ using Data.Model;
 
 namespace Business
 {
-    /// <summary>
-    /// ProducBusiness
-    /// </summary>
-    public class Business
+    public class StudentsBusiness
     {
         private Context context { get; set; }
 
         /// <summary>
-        /// Get all marks from the database
+        /// Get all students from the database
         /// </summary>
-        public List<Mark> GetAllMarks()
+        public List<Student> GetAllStudent()
         {
             using (context = new Context())
             {
-                return context.Marks.ToList();
+                return context.Students.ToList();
             }
         }
 
         /// <summary>
-        /// Get single mark from the database by Id
+        /// Get single student from the database by Id
         /// </summary>
-        public Mark GetMark(int id)
+        public Student GetMarkStudent(int id)
         {
             using (context = new Context())
             {
-                return context.Marks.Find(id);
+                return context.Students.Find(id);
             }
         }
 
         /// <summary>
-        /// Add a mark to the database
+        /// Add a student to the database
         /// </summary>
-        public void AddMark(Mark mark)
+        public void AddStdent(Student student)
         {
             using (context = new Context())
             {
-                context.Marks.Add(mark);
+                context.Students.Add(student);
                 context.SaveChanges();
             }
         }
 
         /// <summary>
-        /// Update a single mark in the database by Id.
+        /// Update a single student in the database by Id.
         /// </summary>
-        public void UpdateMark(Mark mark)
+        public void UpdateMark(Student student)
         {
             using (context = new Context())
             {
-                var item = context.Marks.Find(mark.Id);
+                var item = context.Students.Find(student.Id);
                 if (item != null)
                 {
-                    context.Entry(item).CurrentValues.SetValues(mark);
+                    context.Entry(item).CurrentValues.SetValues(student);
                     context.SaveChanges();
                 }
             }
         }
 
         /// <summary>
-        /// Deleate a mark from the database by Id
+        /// Deleate a student from the database by Id
         /// </summary>
-        public void DeleteMark(int id)
+        public void DeleteStudent(int id)
         {
             using (context = new Context())
             {
-                var mark = context.Marks.Find(id);
-                if (mark != null)
+                var student = context.Students.Find(id);
+                if (student != null)
                 {
-                    context.Marks.Remove(mark);
+                    context.Students.Remove(student);
                     context.SaveChanges();
                 }
             }
         }
+
     }
+
 }
