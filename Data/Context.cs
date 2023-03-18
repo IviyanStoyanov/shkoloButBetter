@@ -11,7 +11,7 @@ namespace Data
     /// <summary>
     /// ProductContext
     /// </summary>
-    public class ProductContext : DbContext
+    public class Context : DbContext
     {
         /// <summary>
         /// Connection String
@@ -31,7 +31,7 @@ namespace Data
         /// <summary>
         /// Constructor
         /// </summary>
-        public ProductContext()
+        public Context()
         {
             // Create the database automaticly
             Database.EnsureCreated();
