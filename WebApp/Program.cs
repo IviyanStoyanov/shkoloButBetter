@@ -1,19 +1,27 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+/// <summary>
+/// Добавяне на услуги в контейнера.
+/// </summary>
 builder.Services.AddRazorPages();
 
 
-// Add service to Database Context
+/// <summary>
+/// Добавяне на услуги в Database Context.
+/// </summary>
 builder.Services.AddDbContext<Data.Context>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+/// <summary>
+/// Конфигуриране на HTTP заявки.
+/// </summary>
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    /// <summary>
+    /// Стойноста по подразбиране на HSTS е 30 дена. За промени виж: https://aka.ms/aspnetcore-hsts.
+    /// </summary>
     app.UseHsts();
 }
 
