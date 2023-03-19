@@ -1,14 +1,20 @@
 ﻿using Data;
 using Data.Model;
 
+/// <summary>
+/// Пространство с имена наречено Business.
+/// </summary>
 namespace Business
 {
+    /// <summary>
+    /// Клас StudentsBusiness.
+    /// </summary>
     public class StudentsBusiness
     {
         private Context context { get; set; }
 
         /// <summary>
-        /// Get all students from the database
+        /// Взема всички ученици от базата данни.
         /// </summary>
         public List<Student> GetAllStudent()
         {
@@ -19,7 +25,7 @@ namespace Business
         }
 
         /// <summary>
-        /// Get single student from the database by Id
+        /// Намира ученик по номер.
         /// </summary>
         public Student GetMarkStudent(int id)
         {
@@ -30,7 +36,7 @@ namespace Business
         }
 
         /// <summary>
-        /// Add a student to the database
+        ///  Добавя ученик в базата данни.
         /// </summary>
         public void AddStdent(Student student)
         {
@@ -42,7 +48,7 @@ namespace Business
         }
 
         /// <summary>
-        /// Update a single student in the database by Id.
+        /// Променя информацията за ученик в базата данни по номер.
         /// </summary>
         public void UpdateMark(Student student)
         {
@@ -58,7 +64,7 @@ namespace Business
         }
 
         /// <summary>
-        /// Deleate a student from the database by Id
+        /// Изтрива ученик от базата данни по номер.
         /// </summary>
         public void DeleteStudent(int id)
         {

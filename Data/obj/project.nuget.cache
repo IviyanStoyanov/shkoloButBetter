@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "5rNWDYBix/afqOt9HLbVQigV35Xw3htzcEldV5llmFLZbLa81ktA6UeR1lT6AXrcrwOUf9V8PtgtbaUdnR8HnQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\katit\\OneDrive\\Работен плот\\shkoloButBetter\\Data\\Data.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.EntityFrameworkCore. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.EntityFrameworkCore.SqlServer. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
