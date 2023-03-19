@@ -4,41 +4,41 @@ using Data.Model;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>
-/// Data Namespace
+/// Пространство с имена наречено Data.
 /// </summary>
 namespace Data
 {
     /// <summary>
-    /// ProductContext
+    /// Клас Context, наследяващ DbContext.
     /// </summary>
     public class Context : DbContext
     {
         /// <summary>
-        /// Connection String
+        /// Свързваща връзка. 
         /// </summary> 
         private const string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=shkoloButBetter;Integrated Security=True;";
 
         /// <summary>
-        /// Marks
+        /// Задава колекция Marks.
         /// </summary>
         public DbSet<Mark> Marks { get; set; }
 
         /// <summary>
-        /// Students
+        /// Задава колекция Students.
         /// </summary>
         public DbSet<Student> Students { get; set; }
 
         /// <summary>
-        /// Constructor
+        /// Конструктор Context
         /// </summary>
         public Context()
         {
-            // Create the database automaticly
+            // Създава автоматично базата данни.
             Database.EnsureCreated();
         }
 
         /// <summary>
-        /// Connection string to Microsoft SQL Server
+        /// Свързваща връзка с Microsoft SQL Server.
         /// </summary> 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
