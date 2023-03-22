@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Data.Model
 {
     /// <summary>
-    /// Клас Student, с атрибути Id, Name, Email, Grade.
+    /// Клас Student, с атрибути Id, Name, Email, Grade, BirthDate
     /// </summary>
     public class Student
     {
@@ -38,6 +38,6 @@ namespace Data.Model
         /// <summary>
         /// Задаване на рожден ден на ученика.
         /// </summary>
-        public int birthDate { get; set; }
+        public int BirthDate { get; set; }
     }
 }
