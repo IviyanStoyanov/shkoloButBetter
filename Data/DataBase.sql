@@ -6,7 +6,8 @@ CREATE TABLE [students]
 	[id] INT, 
 	[name] VARCHAR(50), 
 	[email] VARCHAR(50),
-	[grade] INT
+	[grade] INT,
+	[birthDate] VARCHAR(50)
 );
 
 CREATE TABLE [marks] 

@@ -33,5 +33,11 @@ namespace Data.Model
         /// Задаване на оценки на ученика.
         /// </summary>
         public int Grade { get; set; }
+
+
+        /// <summary>
+        /// Задаване на рожден ден на ученика.
+        /// </summary>
+        public int birthDate { get; set; }
     }
 }
