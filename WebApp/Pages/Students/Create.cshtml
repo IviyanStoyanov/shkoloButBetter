@@ -5,31 +5,31 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create studenbt</h1>
+<h1>Добави ученици</h1>
 
-<h4>Student</h4>
+<h4>Ученик</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Student.Name" class="control-label"></label>
+                <label asp-for="Student.Name" class="control-label">Име</label>
                 <input asp-for="Student.Name" class="form-control" />
                 <span asp-validation-for="Student.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.Email" class="control-label"></label>
+                <label asp-for="Student.Email" class="control-label">Имейл</label>
                 <input asp-for="Student.Email" class="form-control" />
                 <span asp-validation-for="Student.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.Grade" class="control-label"></label>
+                <label asp-for="Student.Grade" class="control-label">Оценка</label>
                 <input asp-for="Student.Grade" class="form-control" />
                 <span asp-validation-for="Student.Grade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.BirthDate" class="control-label"></label>
+                <label asp-for="Student.BirthDate" class="control-label">Дата на раждане</label>
                 <input asp-for="Student.BirthDate" type="date" class="form-control" />
                 <span asp-validation-for="Student.BirthDate" class="text-danger"></span>
             </div>
@@ -41,7 +41,7 @@
 </div>
 
 <div>
-    <a asp-page="/MarksTeachers/Index">Back to List</a>
+    <a asp-page="/MarksTeachers/Index">Обратно към дневник</a>
 </div>
 
 @section Scripts {

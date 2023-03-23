@@ -7,7 +7,7 @@
 
 <h1>Create</h1>
 
-<h4>Mark</h4>
+<h4>Оценка</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,22 +19,22 @@
                 <span asp-validation-for="Mark.Stud" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Mark.Grade" class="control-label"></label>
+                <label asp-for="Mark.Grade" class="control-label">Оценка</label>
                 <input asp-for="Mark.Grade" class="form-control" />
                 <span asp-validation-for="Mark.Grade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Mark.Subject" class="control-label"></label>
+                <label asp-for="Mark.Subject" class="control-label">Предмет</label>
                 <input asp-for="Mark.Subject" class="form-control" />
                 <span asp-validation-for="Mark.Subject" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Mark.Teacher" class="control-label"></label>
+                <label asp-for="Mark.Teacher" class="control-label">Учител</label>
                 <input asp-for="Mark.Teacher" class="form-control" />
                 <span asp-validation-for="Mark.Teacher" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Mark.Date" class="control-label"></label>
+                <label asp-for="Mark.Date" class="control-label">Дата</label>
                 <input type = "date" asp-for="Mark.Date" class="form-control" />
                 <span asp-validation-for="Mark.Date" class="text-danger"></span>
             </div>
@@ -47,7 +47,7 @@
 </div>
 
 <div>
-    <a asp-page="/MarksTeachers/Index">Back to List</a>
+    <a asp-page="/MarksTeachers/Index">Обратно към дневник</a>
 </div>
 
 @section Scripts {
