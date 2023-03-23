@@ -5,7 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create studenbt</h1>
 
 <h4>Student</h4>
 <hr />
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Student.BirthDate" class="control-label"></label>
-                <input type="date" asp-for="Student.BirthDate" class="form-control" />
+                <input asp-for="Student.BirthDate" type="date" class="form-control" />
                 <span asp-validation-for="Student.BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -41,7 +41,7 @@
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="/MarksTeachers/Index">Back to List</a>
 </div>
 
 @section Scripts {

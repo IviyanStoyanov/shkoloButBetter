@@ -38,6 +38,6 @@ namespace Data.Model
         /// <summary>
         /// Задаване на рожден ден на ученика.
         /// </summary>
-        public int BirthDate { get; set; }
+        public string BirthDate { get; set; }
     }
 }
