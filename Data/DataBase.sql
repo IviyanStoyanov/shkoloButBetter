@@ -17,5 +17,5 @@ CREATE TABLE [marks]
 	[mark] Decimal, 
 	[subject] VARCHAR(50),
 	[teacher] VARCHAR(50),
-	[date] VARCHAR(50)
+	[date] Date
 );

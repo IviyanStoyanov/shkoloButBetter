@@ -42,6 +42,6 @@ namespace Data.Model
         /// <summary>
         /// Задаване на дата на въвеждане на информацията.
         /// </summary>
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }
