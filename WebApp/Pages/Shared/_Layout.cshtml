@@ -72,12 +72,13 @@
             background-color: #272423;
             color: white;
         }
+     
     </style>
 </head>
 <body>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <button onclick="myFunction()">Change Theme</button>
+        <button onclick="ChangeMode()">Change Theme</button>
     </div>
 
     <div id="main">
@@ -94,7 +95,7 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
-        function myFunction() {
+        function ChangeMode() {
             var elem1 = document.body;
             elem1.classList.toggle("dark-mode");
         }

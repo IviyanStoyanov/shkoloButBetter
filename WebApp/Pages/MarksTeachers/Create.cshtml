@@ -5,7 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Добавяне на оценка</h1>
 
 <h4>Оценка</h4>
 <hr />
@@ -14,7 +14,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-warning"></div>
             <div class="form-group">
-                <label asp-for="Mark.Stud" class="control-label"></label>
+                <label asp-for="Mark.Stud" class="control-label">Ученик</label>
                 <input asp-for="Mark.Stud" class="form-control" />
                 <span asp-validation-for="Mark.Stud" class="text-danger"></span>
             </div>
