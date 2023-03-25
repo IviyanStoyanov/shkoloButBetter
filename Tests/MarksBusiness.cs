@@ -1,20 +1,9 @@
 using Business;
 using Data;
 using Data.Model;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-using NUnit.Framework;
-using System.Diagnostics;
-=======
 using System.Diagnostics;
 using Newtonsoft.Json;
 
->>>>>>> Stashed changes
-=======
-using System.Diagnostics;
-using Newtonsoft.Json;
-
->>>>>>> Stashed changes
 /// <summary>
 /// Пространство с имена наречено Tests.
 /// </summary>
@@ -29,58 +18,13 @@ namespace Tests
         private MarksBusiness marksBusiness;
 
         /// <summary>
-        /// Задаване на контекст и marksBusiness
+        /// Задаване на контекст и studentBusiness
         /// </summary>
         [SetUp]
         public void Setup()
         {
             context = new Context();
             marksBusiness = new MarksBusiness();
-        }
-
-        /// <summary>
-        /// Тест проверяващ дали методът GetAllMarks от MarksBusiness работи.
-        /// </summary>
-        [Test]
-        public void GetAllMarksTesting()
-        {
-
-        }
-
-        /// <summary>
-        /// Тест проверяващ дали методът GetMark от MarksBusiness работи.
-        /// </summary>
-        [Test]
-        public void GetMarkTesting()
-        {
-            var newMark = new Mark { Stud = "Katerina Slavova", Grade = 11, Subject = "Math", Teacher = "Tanq Zlateva", Date = DateTime.Now };
-
-            context.Add(newMark);
-            var searchMark = context.Marks.OrderByDescending(x => x.Id).First();
-
-        }
-
-        /// <summary>
-        /// Тест проверяващ дали методът GetAllMarks от MarksBusiness работи.
-        /// </summary>
-        [Test]
-        public void GetAllMarksTesting()
-        {
-            var newMarks = JsonConvert.SerializeObject(context.Marks.OrderBy(x=>x.Id));
-
-            var  searchMarks= JsonConvert.SerializeObject(marksBusiness.GetAllMarks().OrderBy(x => x.Id));
-
-            CollectionAssert.AreEqual(newMarks, searchMarks);
-        }
-
-        /// <summary>
-        /// Тест проверяващ дали методът GetMark от MarksBusiness работи.
-        /// </summary>
-        [Test]
-        public void GetMarkTesting()
-        {
-
-
         }
 
         /// <summary>
@@ -120,22 +64,9 @@ namespace Tests
                 Teacher = "Tanq Zlateva", 
                 Date =DateTime.Now
             };
-<<<<<<< Updated upstream
 
             marksBusiness.AddMark(newMark);
             var searchMark = context.Marks.OrderByDescending(x => x.Id).First();
-
-            Assert.AreEqual(newMark.Id, searchMark.Id);
-            Assert.AreEqual(newMark.Stud, searchMark.Stud);
-            Assert.AreEqual(newMark.Subject, searchMark.Subject);
-            Assert.AreEqual(newMark.Teacher, searchMark.Teacher);
-            Assert.AreEqual(newMark.Date, searchMark.Date);
-
-        }
-
-        /// <summary>
-        /// Тест проверяващ дали методът UpdateMark от MarksBusiness работи.
-        /// </summary>
 
         /// <summary>
         /// Тест проверяващ дали методът UpdateMark от MarksBusiness работи.
@@ -145,6 +76,13 @@ namespace Tests
             [Test]
             public void UpdateStudent()
             {
+            Assert.AreEqual(newMark.Id, searchMark.Id);
+            Assert.AreEqual(newMark.Stud, searchMark.Stud);
+            Assert.AreEqual(newMark.Subject, searchMark.Subject);
+            Assert.AreEqual(newMark.Teacher, searchMark.Teacher);
+            Assert.AreEqual(newMark.Date, searchMark.Date);
+
+        }
 
                 var stud = new Mark { Grade = 6, Id = 0, Subject = "IT", Stud = "Iviyan", Date = DateTime.Now, Teacher = "T.Ivanova", };
                 context.Marks.Add(stud);
@@ -156,23 +94,7 @@ namespace Tests
                 context.Dispose();
                 context = new Context();
                 var output = context.Marks.Find(stud.Id);
-=======
->>>>>>> Stashed changes
 
-            marksBusiness.AddMark(newMark);
-            var searchMark = context.Marks.OrderByDescending(x => x.Id).First();
-
-            Assert.AreEqual(newMark.Id, searchMark.Id);
-            Assert.AreEqual(newMark.Stud, searchMark.Stud);
-            Assert.AreEqual(newMark.Subject, searchMark.Subject);
-            Assert.AreEqual(newMark.Teacher, searchMark.Teacher);
-            Assert.AreEqual(newMark.Date, searchMark.Date);
-
-        }
-
-        /// <summary>
-        /// Тест проверяващ дали методът UpdateMark от MarksBusiness работи.
-        /// </summary>
 
 
                 Assert.AreEqual(expectedOutput, output);
@@ -180,10 +102,13 @@ namespace Tests
             }
 
         /// <summary>
+        /// Тест проверяващ дали методът UpdateMark от MarksBusiness работи.
+        /// </summary>
+
+
+        /// <summary>
         /// Тест проверяващ дали методът DeleteMark от MarksBusiness работи.
         /// </summary>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
             [Test]
         public void DeleteStudent()
@@ -200,13 +125,5 @@ namespace Tests
             Assert.IsNull(actualCar);
             context.SaveChanges();
         }
-=======
-      
-
->>>>>>> Stashed changes
-=======
-      
-
->>>>>>> Stashed changes
     }
 }
