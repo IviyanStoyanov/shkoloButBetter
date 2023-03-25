@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,22 +23,26 @@ namespace Data.Model
         /// <summary>
         /// Задаване на име на ученика.
         /// </summary>
+        [DisplayName("Име на ученика")]
         public string Name { get; set; }
 
         /// <summary>
         /// Задаване на имейл на ученика.
         /// </summary>
+        [DisplayName("Имейл")]
         public string Email { get; set; }
 
         /// <summary>
         /// Задаване на оценки на ученика.
         /// </summary>
+        [DisplayName("Клас")]
         public int Grade { get; set; }
 
 
         /// <summary>
         /// Задаване на рожден ден на ученика.
         /// </summary>
+        [DisplayName("Дата на раждане")]
         public DateTime BirthDate { get; set; }
     }
 }
