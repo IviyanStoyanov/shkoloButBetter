@@ -18,4 +18,5 @@ CREATE TABLE [marks]
 	[subject] VARCHAR(50),
 	[teacher] VARCHAR(50),
 	[date] Date
+	CONSTRAINT [fk_students_id_marks] FOREIGN KEY([stud]) REFERENCES [students]([Id]),
 );
