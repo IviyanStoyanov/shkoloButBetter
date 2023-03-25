@@ -4,7 +4,9 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<head>
+    <link rel="stylesheet" href="~/css/linkButtons.css" asp-append-version="true" />
+</head>
 <h1>Index</h1>
 
 <table class="table">
@@ -45,9 +47,9 @@
                 </td>
 
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Промени</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Детайли</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Премахни</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="linkbutton">Промени</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="linkbutton">Детайли</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="linkbutton">Премахни</a>
             </td>
         </tr>
 }

@@ -4,7 +4,9 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<head>
+    <link rel="stylesheet" href="~/css/linkButtons.css" asp-append-version="true" />
+</head>
 <h1>Изтрий</h1>
 
 <h3>Сигурни ли сте, че искате да го изтриете?</h3>
@@ -47,6 +49,6 @@
     <form method="post">
         <input type="hidden" asp-for="Mark.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Обратно към дневник</a>
+        <a asp-page="./Index" class="linkbutton">Обратно към дневник</a>
     </form>
 </div>

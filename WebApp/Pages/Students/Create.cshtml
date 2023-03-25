@@ -4,6 +4,9 @@
 @{
     ViewData["Title"] = "Create";
 }
+<head>
+    <link rel="stylesheet" href="~/css/linkButtons.css" asp-append-version="true" />
+</head>
 
 <h1>Добави ученици</h1>
 
@@ -34,14 +37,14 @@
                 <span asp-validation-for="Student.BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="buttonCreate" style="width:94px;height:40px;margin: auto;" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="/MarksTeachers/Index">Обратно към дневник</a>
+    <a asp-page="/MarksTeachers/Index" class="linkbutton">Обратно към дневник</a>
 </div>
 
 @section Scripts {

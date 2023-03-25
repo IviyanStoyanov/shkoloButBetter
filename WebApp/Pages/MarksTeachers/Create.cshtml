@@ -4,7 +4,10 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<head>
+    <link rel="stylesheet" href="~/css/linkButtons.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/AccountButtons.css" asp-append-version="true" />
+</head>
 <h1>Добавяне на оценка</h1>
 
 <h4>Оценка</h4>
@@ -40,14 +43,14 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="buttonCreate" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="/MarksTeachers/Index">Обратно към дневник</a>
+    <a asp-page="/MarksTeachers/Index" class="linkbutton">Обратно към дневник</a>
 </div>
 
 @section Scripts {

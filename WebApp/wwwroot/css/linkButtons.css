@@ -1,0 +1,19 @@
+.linkbutton:link {
+    text-decoration: none;
+    color: mediumpurple;
+}
+
+.linkbutton:visited {
+    text-decoration: underline;
+    color: mediumpurple;
+}
+
+.linkbutton:hover {
+    text-decoration: underline;
+    color: rebeccapurple;
+}
+
+.linkbutton:active {
+    text-decoration: underline;
+    color: mediumpurple;
+}
