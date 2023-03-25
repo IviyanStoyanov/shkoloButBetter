@@ -3,7 +3,7 @@
 -- Create table
 CREATE TABLE [students] 
 (
-	[id] INT IDENTITY PRIMARY KEY, 
+	[id] INT, 
 	[name] VARCHAR(50), 
 	[email] VARCHAR(50),
 	[grade] INT,
@@ -12,7 +12,7 @@ CREATE TABLE [students]
 
 CREATE TABLE [marks] 
 (
-	[id] INT IDENTITY PRIMARY KEY, 
+	[id] INT, 
 	[stud] INT,
 	[mark] Decimal, 
 	[subject] VARCHAR(50),
