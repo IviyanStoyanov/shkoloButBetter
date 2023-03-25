@@ -13,33 +13,33 @@
 </head>
 
 <body>
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <button onclick="ChangeMode()">Change Theme</button>
-    </div>
-
-    <div id="main">
-        <button class="openbtn" onclick="openNav()">☰</button>
-    </div>
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-        function ChangeMode() {
-            var elem1 = document.body;
-            elem1.classList.toggle("dark-mode");
-        }
-    </script>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  bg-info border-bottom box-shadow mb-3">
             <div class="container">
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                    <button onclick="ChangeMode()">Change Theme</button>
+                </div>
+
+                <div id="main">
+                    <button class="openbtn" onclick="openNav()">☰</button>
+                </div>
+
+                <script>
+                    function openNav() {
+                        document.getElementById("mySidebar").style.width = "250px";
+                        document.getElementById("main").style.marginLeft = "250px";
+                    }
+
+                    function closeNav() {
+                        document.getElementById("mySidebar").style.width = "0";
+                        document.getElementById("main").style.marginLeft = "0";
+                    }
+                    function ChangeMode() {
+                        var elem1 = document.body;
+                        elem1.classList.toggle("dark-mode");
+                    }
+                </script>
                 <a class="navbar-brand" asp-area="" asp-page="/Index">SHKOLO BUT BETTER</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
