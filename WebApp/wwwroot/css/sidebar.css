@@ -20,7 +20,7 @@ body {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: 25px;
-        color: #818181;
+        color:mediumpurple;
         display: block;
         transition: 0.3s;
     }
@@ -31,27 +31,27 @@ body {
 
     .sidebar .closebtn {
         position: absolute;
-        color: deepskyblue;
+        color: mediumpurple;
         top: 0;
         right: 25px;
         font-size: 36px;
         margin-left: 50px;
     }
     .sidebar .closebtn:hover {
-        color: lightblue;
+        color: mediumpurple;
     }
 
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: #111;
+    background-color: mediumpurple;
     color: white;
     padding: 10px 15px;
     border: none;
 }
 
     .openbtn:hover {
-        background-color: #444;
+        background-color: mediumpurple;
     }
 
 .dark-mode {
