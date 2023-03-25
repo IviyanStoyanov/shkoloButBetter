@@ -1,7 +1,6 @@
 using Business;
 using Data;
 using Data.Model;
-using System.Diagnostics;
 using Newtonsoft.Json;
 
 /// <summary>
@@ -33,9 +32,9 @@ namespace Tests
         [Test]
         public void GetAllMarksTesting()
         {
-            var newMarks = JsonConvert.SerializeObject(context.Marks.OrderBy(x=>x.Id));
+            var newMarks = JsonConvert.SerializeObject(context.Marks.OrderBy(x => x.Id));
 
-            var  searchMarks= JsonConvert.SerializeObject(marksBusiness.GetAllMarks().OrderBy(x => x.Id));
+            var searchMarks = JsonConvert.SerializeObject(marksBusiness.GetAllMarks().OrderBy(x => x.Id));
 
             CollectionAssert.AreEqual(newMarks, searchMarks);
         }
@@ -56,61 +55,53 @@ namespace Tests
         [Test]
         public void AddMarkTesting()
         {
-            var newMark = new Mark 
-            { 
-                Stud = "Katerina Slavova", 
-                Grade =11,
-                Subject = "Math", 
-                Teacher = "Tanq Zlateva", 
-                Date =DateTime.Now
+            var newMark = new Mark
+            {
+                Stud = "Katerina Slavova",
+                Grade = 11,
+                Subject = "Math",
+                Teacher = "Tanq Zlateva",
+                Date = DateTime.Now
             };
 
             marksBusiness.AddMark(newMark);
             var searchMark = context.Marks.OrderByDescending(x => x.Id).First();
 
-        /// <summary>
-        /// Тест проверяващ дали методът UpdateMark от MarksBusiness работи.
-        /// </summary>
-
-       
-            [Test]
-            public void UpdateStudent()
-            {
             Assert.AreEqual(newMark.Id, searchMark.Id);
             Assert.AreEqual(newMark.Stud, searchMark.Stud);
             Assert.AreEqual(newMark.Subject, searchMark.Subject);
             Assert.AreEqual(newMark.Teacher, searchMark.Teacher);
             Assert.AreEqual(newMark.Date, searchMark.Date);
-
         }
-
-                var stud = new Mark { Grade = 6, Id = 0, Subject = "IT", Stud = "Iviyan", Date = DateTime.Now, Teacher = "T.Ivanova", };
-                context.Marks.Add(stud);
-                context.SaveChanges();
-                var changeOutput = context.Marks.OrderBy(c => c.Id).First();
-                var expectedOutput = new Mark { Id = 0, Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
-
-                marksBusiness.UpdateMark(expectedOutput);
-                context.Dispose();
-                context = new Context();
-                var output = context.Marks.Find(stud.Id);
-
-
-
-                Assert.AreEqual(expectedOutput, output);
-                
-            }
 
         /// <summary>
         /// Тест проверяващ дали методът UpdateMark от MarksBusiness работи.
         /// </summary>
+        [Test]
+        public void UpdateStudent()
+        {
+            var stud = new Mark { Grade = 6, Id = 0, Subject = "IT", Stud = "Iviyan", Date = DateTime.Now, Teacher = "T.Ivanova", };
+            context.Marks.Add(stud);
+            context.SaveChanges();
+            var changeOutput = context.Marks.OrderBy(c => c.Id).First();
+            var expectedOutput = new Mark { Id = 0, Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
 
+            marksBusiness.UpdateMark(expectedOutput);
+            context.Dispose();
+            context = new Context();
+            var output = context.Marks.Find(stud.Id);
+
+
+
+            Assert.AreEqual(expectedOutput, output);
+
+        }
 
         /// <summary>
         /// Тест проверяващ дали методът DeleteMark от MarksBusiness работи.
         /// </summary>
 
-            [Test]
+        [Test]
         public void DeleteStudent()
         {
             var stud = new Mark { Id = 0, Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
@@ -125,5 +116,6 @@ namespace Tests
             Assert.IsNull(actualCar);
             context.SaveChanges();
         }
+
     }
 }
