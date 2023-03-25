@@ -15,8 +15,11 @@ namespace Tests
     public class StudentsBusiness
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 =======
+=======
+>>>>>>> Stashed changes
         private Context context;
         private StudentsBusiness studentsBusiness;
 
@@ -75,6 +78,9 @@ namespace Tests
         {
 
         }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }
