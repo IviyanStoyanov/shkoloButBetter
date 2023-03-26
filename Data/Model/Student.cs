@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 /// <summary>
 /// Пространство с имена наречено Data.Model.
 /// </summary>

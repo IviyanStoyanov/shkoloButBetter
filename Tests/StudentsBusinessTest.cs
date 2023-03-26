@@ -1,7 +1,6 @@
 ﻿using Business;
 using Data;
 using Data.Model;
-using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 
 /// <summary>
@@ -12,7 +11,7 @@ namespace Tests
     /// <summary>
     /// Публичен клас с NUnit тестове за пространството StudentsBusiness.
     /// </summary>
-    public class StudentsBusiness
+    public class StudentsBusinessTest
     {
         private Context context;
         private StudentsBusiness studentsBusiness;
@@ -49,16 +48,32 @@ namespace Tests
         /// Тест проверяващ дали методът AddStdent от StudentsBusiness работи.
         /// </summary>
         [Test]
-        public void AddStdenttTesting()
+        public void AddStudent()
         {
+            var stud = new Student()
+            {
+                Id = 0,
+                Name = "Iviyan",
+                Email = "ïvian.st1@gmail.com",
+                Grade = 11,
+                BirthDate = DateTime.Now
+            };
 
+            studentsBusiness.AddStdent(stud);
+            var searchMark = context.Marks.OrderByDescending(x => x.Id).First();
+
+            Assert.AreEqual(stud.Id, stud.Id);
+            Assert.AreEqual(stud.Name, stud.Name);
+            Assert.AreEqual(stud.Email, stud.Email);
+            Assert.AreEqual(stud.Grade, stud.Grade);
+            Assert.AreEqual(stud.BirthDate, stud.BirthDate);
         }
 
         /// <summary>
         /// Тест проверяващ дали методът UpdateMark от StudentsBusiness работи.
         /// </summary>
         [Test]
-        public void UpdateMarkTesting()
+        public void UpdateGradeTesting()
         {
       
             
@@ -70,7 +85,17 @@ namespace Tests
         [Test]
         public void DeleteStudentTesting()
         {
+            var stud = new Student { Id = 0, Name = "Iviyan", Email = "ïvian.st1@gmail.com", Grade = 11, BirthDate = DateTime.Now };
+            context.Students.Add(stud);
+            context.SaveChanges();
 
+            studentsBusiness.DeleteStudent(stud.Id);
+            context.Dispose();
+            context = new Context();
+            var actualCar = context.Students.Find(stud.Id);
+
+            Assert.IsNull(actualCar);
+            context.SaveChanges();
         }
     }
 }
