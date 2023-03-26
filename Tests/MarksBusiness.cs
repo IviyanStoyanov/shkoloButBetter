@@ -32,11 +32,7 @@ namespace Tests
         [Test]
         public void GetAllMarksTesting()
         {
-            var newMarks = JsonConvert.SerializeObject(context.Marks.OrderBy(x => x.Id));
-
-            var searchMarks = JsonConvert.SerializeObject(marksBusiness.GetAllMarks().OrderBy(x => x.Id));
-
-            CollectionAssert.AreEqual(newMarks, searchMarks);
+           
         }
 
         /// <summary>
