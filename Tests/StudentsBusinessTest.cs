@@ -32,7 +32,11 @@ namespace Tests
         [Test]
         public void GetAllStudentTesting()
         {
-       
+            var newStudent = JsonConvert.SerializeObject(context.Students.OrderBy(x => x.Id));
+
+            var searchStudent = JsonConvert.SerializeObject(studentsBusiness.GetAllStudent().OrderBy(x => x.Id));
+
+            CollectionAssert.AreEqual(newStudent, searchStudent);
         }
 
         /// <summary>
