@@ -4,23 +4,34 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+<style>
+    #outer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .innerR {
+        padding-left: 50px;
+        display: inline-block;
+    }
+
+    .innerL {
+        display: inline-block;
+    }
+</style>
+
 <head>
     <link rel="stylesheet" href="~/css/linkButtons.css" asp-append-version="true" />
 </head>
 
 <h1>Дневник</h1>
+<h1> </h1>
 
-<p>
-    <button class="buttonAddStudentAndGrade" style="width:300px;height:29px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
-            <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
-        </svg>
-        <a asp-page="Create" class="text-white" style="text-decoration:none">Добави оценка</a>
-    </button>
-
-   
+<div class="outer">
+  
         <div class="innerL">
-            <a class="buttonAddStudentAndGrade" href="/Students/Create" style="display:block; text-decoration: none;width:300px;height:29px;" data-inline="true">
+            <a class="buttonAddStudentAndGrade" href="/Students/Create" style="display:block; margin-left:20px; text-decoration: none;width:300px;height:29px;" data-inline="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
                     <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                     <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
@@ -30,7 +41,7 @@
         </div>
 
         <div class="innerL">
-        <a class="buttonAddStudentAndGrade" href="Create" style="display:block; text-decoration: none;width:300px;height:29px;" data-inline="true">
+        <a class="buttonAddStudentAndGrade" href="/MarksTeachers/Create" style="display:block; text-decoration: none;width:300px;height:29px;" data-inline="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
                <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
             </svg>
@@ -38,16 +49,16 @@
           </a>
         </div>
    
-    <div class="innerL">
-        <a class="buttonAddStudentAndGrade" href="/Students/Index" style="display:block; text-decoration: none;width:300px;height:29px;" data-inline="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
-                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-            </svg>
-            <span class="text-white" style="text-decoration:none">виж всички ученици</span>
-        </a>
-    </div>
+        <div class="innerL">
+            <a class="buttonAddStudentAndGrade" href="/Students/Index" style="display:block; text-decoration: none;width:300px;height:29px;" data-inline="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                </svg>
+                <span class="text-white" style="text-decoration:none">виж всички ученици</span>
+            </a>
+        </div>
     
-</p>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -69,8 +80,9 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model.Mark) {
+   <tbody>
+@foreach (var item in Model.Mark)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Stud)
@@ -94,6 +106,6 @@
             </td>
         </tr>
 
-}
-    </tbody>
+    }
+   </tbody>
 </table>
