@@ -56,7 +56,6 @@ namespace Tests
         {
             var stud = new Student()
             {
-                Id = 0,
                 Name = "Iviyan",
                 Email = "ïvian.st1@gmail.com",
                 Grade = 11,
@@ -89,16 +88,16 @@ namespace Tests
         [Test]
         public void DeleteStudentTesting()
         {
-            var stud = new Student { Id = 0, Name = "Iviyan", Email = "ïvian.st1@gmail.com", Grade = 11, BirthDate = DateTime.Now };
+            var stud = new Student {Name = "Iviyan", Email = "ïvian.st1@gmail.com", Grade = 11, BirthDate = DateTime.Now };
             context.Students.Add(stud);
             context.SaveChanges();
 
             studentsBusiness.DeleteStudent(stud.Id);
             context.Dispose();
             context = new Context();
-            var actualCar = context.Students.Find(stud.Id);
+            var actualStud = context.Students.Find(stud.Id);
 
-            Assert.IsNull(actualCar);
+            Assert.IsNull(actualStud);
             context.SaveChanges();
         }
     }

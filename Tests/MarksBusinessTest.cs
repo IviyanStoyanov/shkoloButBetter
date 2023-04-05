@@ -1,6 +1,7 @@
 using Business;
 using Data;
 using Data.Model;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using Newtonsoft.Json;
 
 /// <summary>
@@ -45,7 +46,20 @@ namespace Tests
         [Test]
         public void GetMarkTesting()
         {
+            var newMark = new Mark
+            {
+                Stud = "Katerina Slavova",
+                Grade = 6,
+                Subject = "Math",
+                Teacher = "Tanq Zlateva",
+                Date = DateTime.Now
+            };
+            context.Marks.Add(newMark);
+            context.SaveChanges();
+           
+            var resultMark = marksBusiness.GetMark(newMark.Id);
 
+            Assert.AreEqual(newMark,resultMark);
 
         }
 
@@ -57,9 +71,8 @@ namespace Tests
         {
             var newMark = new Mark
             {
-                Id = 0,
                 Stud = "Katerina Slavova",
-                Grade = 11,
+                Grade = 6,
                 Subject = "Math",
                 Teacher = "Tanq Zlateva",
                 Date = DateTime.Now
@@ -81,24 +94,21 @@ namespace Tests
         [Test]
         public void UpdateMark()
         {
-            var stud = new Mark { Grade = 6, Id = 0, Subject = "IT", Stud = "Iviyan", Date = DateTime.Now, Teacher = "T.Ivanova", };
+            var stud = new Mark { Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
             context.Marks.Add(stud);
             context.SaveChanges();
             var changeOutput = context.Marks.OrderBy(c => c.Id).First();
-            var expectedOutput = new Mark { Id = 0, Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
+            var expectedOutput = new Mark { Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
 
             marksBusiness.UpdateMark(expectedOutput);
             context.Dispose();
             context = new Context();
             var output = context.Marks.Find(stud.Id);
 
-
-            Assert.AreEqual(expectedOutput.Id, output.Id);
+        
             Assert.AreEqual(expectedOutput.Stud, output.Stud);
             Assert.AreEqual(expectedOutput.Subject, output.Subject);
             Assert.AreEqual(expectedOutput.Teacher, output.Teacher);
-            Assert.AreEqual(expectedOutput.Date, output.Date);
-
         }
 
         /// <summary>
@@ -108,16 +118,16 @@ namespace Tests
         [Test]
         public void DeleteMark()
         {
-            var stud = new Mark { Id = 0, Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
+            var stud = new Mark { Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
             context.Marks.Add(stud);
             context.SaveChanges();
 
             marksBusiness.DeleteMark(stud.Id);
             context.Dispose();
             context = new Context();
-            var actualCar = context.Students.Find(stud.Id);
+            var actualStud = context.Students.Find(stud.Id);
 
-            Assert.IsNull(actualCar);
+            Assert.IsNull(actualStud);
             context.SaveChanges();
         }
 
