@@ -20,8 +20,9 @@
     <Language>en-US</Language>
     <DocumentationSources>
       <DocumentationSource sourceFile="Business\Business.csproj" />
-<DocumentationSource sourceFile="Data\Data.csproj" />
-<DocumentationSource sourceFile="WebApp\WebApp.csproj" /></DocumentationSources>
+      <DocumentationSource sourceFile="Data\Data.csproj" />
+      <DocumentationSource sourceFile="WebApp\WebApp.csproj" />
+    </DocumentationSources>
     <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
     <SyntaxFilters>C#, Visual Basic, Managed C++</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
