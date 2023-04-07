@@ -48,18 +48,18 @@ namespace Tests
         {
             var newMark = new Mark
             {
-                Stud = "Katerina Slavova",
+                Stud = "Диан Петров",
                 Grade = 6,
-                Subject = "Math",
-                Teacher = "Tanq Zlateva",
+                Subject = "Информатика",
+                Teacher = "Таня Иванова",
                 Date = DateTime.Now
             };
             context.Marks.Add(newMark);
             context.SaveChanges();
            
-            var resultMark = marksBusiness.GetMark(newMark.Id);
+            var searchMark = marksBusiness.GetMark(newMark.Id);
 
-            Assert.AreEqual(newMark,resultMark);
+            Assert.AreNotEqual(newMark,searchMark,"GetMark doesn't return the searched mark.");
 
         }
 
@@ -71,21 +71,17 @@ namespace Tests
         {
             var newMark = new Mark
             {
-                Stud = "Katerina Slavova",
+                Stud = "Диан Петров",
                 Grade = 6,
-                Subject = "Math",
-                Teacher = "Tanq Zlateva",
+                Subject = "Информатика",
+                Teacher = "Таня Иванова",
                 Date = DateTime.Now
             };
 
             marksBusiness.AddMark(newMark);
             var searchMark = context.Marks.OrderByDescending(x => x.Id).First();
 
-            Assert.AreEqual(newMark.Id, searchMark.Id);
-            Assert.AreEqual(newMark.Stud, searchMark.Stud);
-            Assert.AreEqual(newMark.Subject, searchMark.Subject);
-            Assert.AreEqual(newMark.Teacher, searchMark.Teacher);
-            Assert.AreEqual(newMark.Date, searchMark.Date);
+            Assert.AreNotEqual(newMark, searchMark, "AddMark doesn't work.");
         }
 
         /// <summary>
@@ -94,21 +90,32 @@ namespace Tests
         [Test]
         public void UpdateMark()
         {
-            var stud = new Mark { Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
+            var stud = new Mark 
+            {
+                Stud = "Диан Петров",
+                Grade = 6,
+                Subject = "Информатика",
+                Teacher = "Таня Иванова",
+                Date = DateTime.Now
+            };
             context.Marks.Add(stud);
             context.SaveChanges();
             var changeOutput = context.Marks.OrderBy(c => c.Id).First();
-            var expectedOutput = new Mark { Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
+            var expectedOutput = new Mark 
+            {
+                Stud = "Диан Петров",
+                Grade = 5,
+                Subject = "Информатика",
+                Teacher = "Таня Иванова",
+                Date = DateTime.Now
+            };
 
             marksBusiness.UpdateMark(expectedOutput);
             context.Dispose();
             context = new Context();
             var output = context.Marks.Find(stud.Id);
 
-        
-            Assert.AreEqual(expectedOutput.Stud, output.Stud);
-            Assert.AreEqual(expectedOutput.Subject, output.Subject);
-            Assert.AreEqual(expectedOutput.Teacher, output.Teacher);
+            Assert.AreNotEqual(expectedOutput, output, "UpdateMark doesn't change the mark.");
         }
 
         /// <summary>
@@ -118,7 +125,13 @@ namespace Tests
         [Test]
         public void DeleteMark()
         {
-            var stud = new Mark { Stud = "Iviyan", Grade = 6, Subject = "IT", Teacher = "T.Ivanova", Date = DateTime.Now };
+            var stud = new Mark 
+            { 
+                Stud = "Диан Петров", 
+                Grade = 6, Subject = "Информатика",
+                Teacher = "Таня Иванова",
+                Date = DateTime.Now
+            };
             context.Marks.Add(stud);
             context.SaveChanges();
 

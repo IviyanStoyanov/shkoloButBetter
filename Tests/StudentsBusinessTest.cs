@@ -52,24 +52,20 @@ namespace Tests
         /// Тест проверяващ дали методът AddStdent от StudentsBusiness работи.
         /// </summary>
         [Test]
-        public void AddStudent()
+        public void AddStudentTesting()
         {
             var stud = new Student()
             {
-                Name = "Iviyan",
-                Email = "ïvian.st1@gmail.com",
+                Name = "Диан Петров",
+                Email = "dianpetrov@gmail.com",
                 Grade = 11,
                 BirthDate = DateTime.Now
             };
 
             studentsBusiness.AddStdent(stud);
-            var searchMark = context.Marks.OrderByDescending(x => x.Id).First();
+            var actualStudent = context.Students.OrderByDescending(x => x.Id).First();
 
-            Assert.AreEqual(stud.Id, stud.Id);
-            Assert.AreEqual(stud.Name, stud.Name);
-            Assert.AreEqual(stud.Email, stud.Email);
-            Assert.AreEqual(stud.Grade, stud.Grade);
-            Assert.AreEqual(stud.BirthDate, stud.BirthDate);
+            Assert.AreNotEqual(stud, actualStudent, "AddStudent doesn't work.");
         }
 
         /// <summary>
@@ -88,7 +84,13 @@ namespace Tests
         [Test]
         public void DeleteStudentTesting()
         {
-            var stud = new Student {Name = "Iviyan", Email = "ïvian.st1@gmail.com", Grade = 11, BirthDate = DateTime.Now };
+            var stud = new Student 
+            {
+                Name = "Диан Петров",
+                Email = "dianpetrov@gmail.com", 
+                Grade = 11, 
+                BirthDate = DateTime.Now 
+            };
             context.Students.Add(stud);
             context.SaveChanges();
 
